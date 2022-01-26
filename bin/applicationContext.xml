@@ -16,16 +16,26 @@
 
     <!-- Define your beans here -->
     
+    <!-- define the dependancy -->
+    
+    <bean
+    id="myFortune"
+    class="com.pushpak.springdemo.Fortune.HappyFortuneService"
+    />
+        
     <bean
     id="baseBallCoach"
     class="com.pushpak.springdemo.Coach.BaseBallCoach"
     >
+    <constructor-arg ref="myFortune"/>
     </bean>
     
     <bean
     id="cricketCoach"
     class="com.pushpak.springdemo.Coach.CricketCoach"
     >
+    <!-- set up setter Injection -->
+    <property name="forturneService" ref="myFortune"/>
     </bean>
     
 </beans>

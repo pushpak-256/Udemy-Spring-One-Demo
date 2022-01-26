@@ -7,13 +7,18 @@ import com.pushpak.springdemo.Coach.Coach;
 public class MyApp {
 
 	public static void main(String[] args) {
-
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-		Coach theCoach = context.getBean("cricketCoach", Coach.class);
-
-		System.out.println(theCoach.getDailyWorkout());
-
+       
+		//1. load the spring config file
+		ClassPathXmlApplicationContext context
+		= new ClassPathXmlApplicationContext("applicationContext.xml");
+       
+		//2. retrieve bean from spring container
+		Coach theCoach = context.getBean("baseBallCoach", Coach.class);
+        
+		//3. call methods on the bean
+		System.out.println(theCoach.getDailyWorkout()+"\n"+theCoach.getFortune());
+		
+        //4. close the context
 		context.close();
 	}
 
