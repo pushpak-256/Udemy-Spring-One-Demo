@@ -16,6 +16,9 @@ public class SetterInjectionDemo {
 		// 3. call methods on the bean
 		System.out.println(theCoach.getDailyWorkout() + "\n" + theCoach.getFortune());
 
+		
+		System.out.println(theCoach.getEmail()+"\n"+theCoach.getTeam());
+		
 		// 4. close the context
 		context.close();
 	}

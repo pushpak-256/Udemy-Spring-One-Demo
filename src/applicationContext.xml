@@ -7,16 +7,20 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+<!-- load properties file (sport.properties) -->
+  <context:property-placeholder location ="classpath:sport.properties"/>
+
 <!-- logging configurations -->
  <bean id="myLoggerConfig" class="LoggerFiles.MyLoggerConfig" init-method="initLogger">
     	<property name="rootLoggerLevel" value="FINE" />
     	<property name="printedLoggerLevel" value="FINE"/>
     </bean>
 	
+	
 
     <!-- Define your beans here -->
     
-    <!-- define the dependancy -->
+    <!-- define the dependency -->
     
     <bean
     id="myFortune"
@@ -36,6 +40,13 @@
     >
     <!-- set up setter Injection -->
     <property name="forturneService" ref="myFortune"/>
+    
+    <!-- for Literal Injection -->
+    <property name="email" value="xyz@email.com"/>
+    
+    <!-- for literal injection (taking values from property file) -->
+    <property name ="team" value="${foo.team}"/>
+    
     </bean>
     
 </beans>
