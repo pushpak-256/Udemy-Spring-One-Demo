@@ -4,21 +4,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.pushpak.springdemo.Coach.Coach;
 
-public class MyApp {
-
+public class ConstructorInjectionApp {
+	
 	public static void main(String[] args) {
-
-		//load spring config file
+		
+		// load spring config file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-		//Retrieve bean from spring container
+		// Retrieve bean from spring container
 		Coach bbCoach = context.getBean("baseBallCoach", Coach.class);
-		Coach ccCoach = context.getBean("cricketCoach", Coach.class);
-		
-		//call method on bean
-		System.out.println(bbCoach.getDailyWorkout() +" "+ccCoach.getDailyWorkout());
 
-		//close context
+		// call method on bean //get Random fortune #practicActivity2
+		System.out.println(bbCoach.getFortune());
+
+		// close context
 		context.close();
 	}
 
