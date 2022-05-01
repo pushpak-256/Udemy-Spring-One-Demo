@@ -23,6 +23,9 @@
 	<bean id="cricketCoach" class="com.pushpak.springdemo.coach.CricketCoach">
 	</bean>
 	
+	<bean id="luckyFortune" class="com.pushpak.springdemo.fortuneServices.LuckyFortune">
+	</bean>
+	
 <!-- Define your beans here -->
 
 </beans>
