@@ -17,7 +17,8 @@ public class MyApp
 	
 	//use beans
 	String workout = coach.getDailyWorkOut();
-	System.out.println(workout);
+	String fortune = coach.getDailyForutune();
+	System.out.println(workout+"\n"+fortune);
 
 	//close context
 	context.close();

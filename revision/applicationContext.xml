@@ -21,6 +21,8 @@
 	</bean>
 
 	<bean id="cricketCoach" class="com.pushpak.springdemo.coach.CricketCoach">
+	<!-- Constructor Injection -->
+	<constructor-arg ref="luckyFortune"/>
 	</bean>
 	
 	<bean id="luckyFortune" class="com.pushpak.springdemo.fortuneServices.LuckyFortune">
