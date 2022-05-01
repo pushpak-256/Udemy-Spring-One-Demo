@@ -14,12 +14,21 @@
 	</bean>
 	<!-- logging configurations -->
 
-
+   <!-- .properties files -->
+    <context:property-placeholder location="classpath:sport.properties"/> 
+   <!--end of .properties files -->
+	
 	<!-- Define your beans here -->
 
 	<bean id="baseBallCoach" class="com.pushpak.springdemo.coach.BaseBallCoach">
 	<!-- set up setter Injection -->
     <property name="forturneService" ref="luckyFortune"/>
+    
+    <!--  Literal Injections -->
+    <property name="team" value ="${foo.team}"/>
+     <property name="email" value ="${xyz.email}"/>
+      <property name="coachName" value ="Rocky"/>
+    
 	</bean>
 
 	<bean id="cricketCoach" class="com.pushpak.springdemo.coach.CricketCoach">

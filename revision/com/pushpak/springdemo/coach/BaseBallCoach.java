@@ -18,6 +18,10 @@ public class BaseBallCoach implements Coach
     }
     // setter injection end
 
+    private String team ;
+    private String email;
+    private String coachName ;
+    
     @Override
     public String getDailyWorkOut()
     {
@@ -30,4 +34,33 @@ public class BaseBallCoach implements Coach
 	return forturneService.getForturne();
     }
 
+    public String getTeam()
+    {
+        return team;
+    }
+
+    public void setTeam(String team)
+    {
+        this.team = team;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public String getCoachName()
+    {
+        return coachName;
+    }
+
+    public void setCoachName(String coachName)
+    {
+        this.coachName = coachName;
+    }
 }

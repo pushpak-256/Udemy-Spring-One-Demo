@@ -2,6 +2,7 @@ package com.pushpak.springdemo;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.pushpak.springdemo.coach.BaseBallCoach;
 import com.pushpak.springdemo.coach.Coach;
 
 public class MyApp
@@ -13,12 +14,17 @@ public class MyApp
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	
 	//Retrieve bean from container
-	Coach coach = context.getBean("cricketCoach", Coach.class);// change ID to get other Sports Coach,// ##configurable
+	BaseBallCoach coach = context.getBean("baseBallCoach", BaseBallCoach.class);// change ID to get other Sports Coach,// ##configurable
 	
 	//use beans
 	String workout = coach.getDailyWorkOut();
 	String fortune = coach.getDailyForutune();
 	System.out.println(workout+"\n"+fortune);
+	
+	//literal Injection
+	System.out.println("\n\nName =" +coach.getCoachName());
+	System.out.println("Team =" +coach.getTeam());
+	System.out.println("Email =" +coach.getEmail());
 
 	//close context
 	context.close();
