@@ -18,6 +18,8 @@
 	<!-- Define your beans here -->
 
 	<bean id="baseBallCoach" class="com.pushpak.springdemo.coach.BaseBallCoach">
+	<!-- set up setter Injection -->
+    <property name="forturneService" ref="luckyFortune"/>
 	</bean>
 
 	<bean id="cricketCoach" class="com.pushpak.springdemo.coach.CricketCoach">
