@@ -20,7 +20,7 @@
 	
 	<!-- Define your beans here -->
 
-	<bean id="baseBallCoach" class="com.pushpak.springdemo.coach.BaseBallCoach">
+	<bean id="baseBallCoach" class="com.pushpak.springdemo.coach.BaseBallCoach" scope="prototype">
 	<!-- set up setter Injection -->
     <property name="forturneService" ref="luckyFortune"/>
     

@@ -26,6 +26,15 @@ public class MyApp
 	System.out.println("Team =" +coach.getTeam());
 	System.out.println("Email =" +coach.getEmail());
 
+	Coach bb1 = context.getBean("baseBallCoach",Coach.class); //scope : prototype
+	Coach bb2 =  context.getBean("baseBallCoach",Coach.class); 
+	
+	Coach cc1 = context.getBean("cricketCoach",Coach.class); //scope : default(Singleton)
+	Coach cc2 =  context.getBean("cricketCoach",Coach.class);
+	
+	System.out.println("\n\nAre baseBallCoach same = "+(bb1==bb2));
+	System.out.println("Are cricketCoach same = "+(cc1==cc2));
+	
 	//close context
 	context.close();
     }
